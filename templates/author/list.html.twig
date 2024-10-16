@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List authors{% endblock %}
+
+{% block body %}
+    <h1>List authors</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td>{{ author.username|upper }}</td>
+                    <td>{{ author.email }}</td>
+                    <td>
+                        <a href="{{ path('author_edit', {'id': author.id}) }}">edit</a>
+                        <a href="{{ path('author_delete', {'id': author.id}) }}">delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

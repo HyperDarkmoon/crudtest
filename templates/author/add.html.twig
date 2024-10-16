@@ -1,0 +1,19 @@
+{# templates/author/add.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Author</title>
+</head>
+<body>
+    <h1 style="text-align: center;">add Author</h1>
+
+    <form method="post">
+        {{ form_start(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        <button type="submit">Save</button>
+        {{ form_end(form) }}
+    </form>
+</body>
+</html>
